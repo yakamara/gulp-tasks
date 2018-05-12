@@ -18,7 +18,6 @@ const path = require('path');
 
 const config = {
     source: null,
-    files: '*.js',
     destination: null,
 };
 
@@ -64,6 +63,6 @@ class ScriptsTask extends Task {
 
 const task = new MultiTask('scripts', config, ScriptsTask);
 
-gulp.task('scripts', task.gulpTask());
+gulp.task(task.gulpTask());
 
 module.exports = task;
