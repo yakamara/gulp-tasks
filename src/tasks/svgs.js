@@ -22,7 +22,11 @@ class SvgsTask extends Task {
             .pipe(plumber())
 
             // minify
-            .pipe(svgmin())
+            .pipe(svgmin({
+                plugins: [{
+                    removeTitle: true
+                }]
+            }))
 
             // log
             .pipe(count({
