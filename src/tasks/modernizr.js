@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
 const path = require('path');
-const uglifyjs = require('uglify-js');
+const terser = require('terser');
 const modernizr = require("modernizr");
 const writefile = require('writefile');
 const humanSize = require('human-size');
@@ -32,7 +32,7 @@ class ModernizrTask extends Task {
 
             if (this.isProduction()) {
                 let options = {}; // see https://github.com/mishoo/UglifyJS2#minify-options
-                result = uglifyjs.minify(result, options).code;
+                result = terser.minify(result, options).code;
             }
 
             let targetSize = humanSize(Buffer.byteLength(result, 'utf8'));

@@ -3,7 +3,10 @@
     "version": "1.1.0",
     "description": "Gulp tasks by Yakamara",
     "license": "MIT",
-    "keywords": ["gulp", "tasks"],
+    "keywords": [
+        "gulp",
+        "tasks"
+    ],
     "author": {
         "name": "Gregor Harlan",
         "url": "https://github.com/gharlan"
@@ -41,11 +44,12 @@
         "gulp-sourcemaps": "^2.6.4",
         "gulp-svgmin": "^1.2.4",
         "gulp-svgstore": "^6.1.1",
-        "gulp-uglify": "^3.0.0",
+        "gulp-uglify-es": "^1.0.4",
         "human-size": "^1.1.0",
         "modernizr": "^3.6.0",
         "node-notifier": "^5.2.1",
         "postcss-import": "^11.1.0",
+        "terser": "^3.8.1",
         "through": "^2.3.8",
         "uglify-js": "^3.3.23",
         "vinyl-buffer": "^1.0.1",
