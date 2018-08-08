@@ -23,7 +23,11 @@ class ImagesTask extends Task {
                 imagemin.gifsicle(),
                 imagemin.jpegtran(),
                 imagemin.optipng(),
-                imagemin.svgo()
+                imagemin.svgo({
+                    plugins: [{
+                        removeViewBox: false
+                    }]
+                })
             ], {
                 verbose: true
             }) : through())
