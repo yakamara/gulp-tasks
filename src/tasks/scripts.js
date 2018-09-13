@@ -31,7 +31,7 @@ class ScriptsTask extends Task {
         });
 
         b.transform("babelify", {
-            presets: ["env"]
+            presets: ["@babel/env"]
         });
 
         const bundle = () => b.bundle()
