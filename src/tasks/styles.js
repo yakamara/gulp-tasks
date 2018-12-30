@@ -11,7 +11,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const postcssImport = require('postcss-import');
 const autoprefixer = require('autoprefixer');
-const nano = require('gulp-cssnano');
+const cssnano = require('cssnano');
 const browserSync = require('browser-sync');
 const size = require('gulp-size');
 const plumber = require('gulp-plumber');
@@ -36,6 +36,16 @@ const config = {
 class StylesTask extends Task {
     run(done) {
         let hasErrors = false;
+
+        const postcssPlugins = [
+            postcssImport(),
+            autoprefixer(),
+        ];
+
+        if (this.isProduction()) {
+            postcssPlugins.push(cssnano(this.config.cssnano));
+        }
+
         return gulp.src(this.config.source)
 
             .pipe(!this.isProduction() ? sourcemaps.init() : through())
@@ -66,15 +76,10 @@ class StylesTask extends Task {
                 done();
             })
 
-            .pipe(postcss([
-                postcssImport(),
-                autoprefixer()
-            ]))
+            .pipe(postcss(postcssPlugins))
 
             // stop error prevention
             .pipe(plumber.stop())
-
-            .pipe(this.isProduction() ? nano(this.config.cssnano) : through())
 
             .pipe(size({title: colors.white('Generated Style:'), showFiles: true}))
 
