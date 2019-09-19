@@ -25,6 +25,8 @@ class SvgsTask extends Task {
             .pipe(svgmin({
                 plugins: [{
                     removeTitle: true
+                }, {
+                    removeViewBox: false
                 }]
             }))
 
