@@ -22,7 +22,7 @@ class ImagesTask extends Task {
                 // https://www.npmjs.com/browse/keyword/imageminplugin
                 imagemin.gifsicle({interlaced: true}),
                 imagemin.mozjpeg({progressive: true}),
-                imagemin.optipng(),
+                imagemin.optipng({optimizationLevel: 2}),
                 imagemin.svgo({
                     plugins: [{
                         removeViewBox: false
