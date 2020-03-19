@@ -20,8 +20,8 @@ class ImagesTask extends Task {
 
             .pipe(this.isProduction() ? imagemin([
                 // https://www.npmjs.com/browse/keyword/imageminplugin
-                imagemin.gifsicle(),
-                imagemin.mozjpeg(),
+                imagemin.gifsicle({interlaced: true}),
+                imagemin.mozjpeg({progressive: true}),
                 imagemin.optipng(),
                 imagemin.svgo({
                     plugins: [{
