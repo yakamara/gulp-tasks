@@ -27,12 +27,12 @@ const config = {
 
 class ModernizrTask extends Task {
     run(done) {
-        modernizr.build(config.modernizr, (result) => {
+        modernizr.build(config.modernizr, async (result) => {
             let dest = path.join(config.destination, '/modernizr.js');
 
             if (this.isProduction()) {
                 let options = {}; // see https://github.com/mishoo/UglifyJS2#minify-options
-                result = terser.minify(result, options).code;
+                result = (await terser.minify(result, options)).code;
             }
 
             let targetSize = humanSize(Buffer.byteLength(result, 'utf8'));
