@@ -55,7 +55,7 @@
         "through": "^2.3.8",
         "vinyl-buffer": "^1.0.1",
         "vinyl-source-stream": "^2.0.0",
-        "watchify": "^3.11.0",
+        "watchify": "^4.0.0",
         "writefile": "^0.2.8"
     }
 }
