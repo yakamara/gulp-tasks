@@ -25,8 +25,9 @@ class ImagesTask extends Task {
                 imagemin.optipng({optimizationLevel: 2}),
                 imagemin.svgo({
                     plugins: [{
-                        removeTitle: false,
-                        removeViewBox: false,
+                        removeTitle: false
+                    }, {
+                        removeViewBox: false
                     }]
                 })
             ], {
