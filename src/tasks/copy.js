@@ -3,7 +3,7 @@ const MultiTask = require('../MultiTask');
 const gulp = require('gulp');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
-const copy = require('cpy');
+import copy from 'cpy';
 const path = require('path');
 
 const config = {
