@@ -28,6 +28,15 @@ class ImagesTask extends Task {
                         removeTitle: false
                     }, {
                         removeViewBox: false
+                    }, {
+                        cleanupIDs: {
+                            prefix: {
+                                toString() {
+                                    this.counter = this.counter || 0;
+                                    return `id-${this.counter++}`;
+                                }
+                            }
+                        }
                     }]
                 })
             ], {
