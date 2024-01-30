@@ -50,7 +50,7 @@
         "modernizr": "^3.6.0",
         "node-notifier": "^10.0.0",
         "postcss": "^8.1.2",
-        "postcss-import": "^15.1.0",
+        "postcss-import": "^16.0.0",
         "sass": "^1.35.1",
         "terser": "^5.0.0",
         "through": "^2.3.8",
