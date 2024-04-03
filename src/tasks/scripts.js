@@ -36,7 +36,8 @@ class ScriptsTask extends Task {
                     useBuiltIns: "entry",
                     corejs: 3,
                 }]
-            ]
+            ],
+            global: true,
         });
 
         const bundle = () => b.bundle()
