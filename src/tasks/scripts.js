@@ -1,20 +1,20 @@
-const Task = require('../Task');
-const MultiTask = require('../MultiTask');
-const gulp = require('gulp');
-const through = require('through');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
-const browserify = require('browserify');
-const watchify = require('watchify');
-const babelify = require('babelify');
-const uglify = require('gulp-uglify-es').default;
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const sourcemaps = require('gulp-sourcemaps');
-const browserSync = require('browser-sync');
-const size = require('gulp-size');
-const notifier = require('node-notifier');
-const path = require('path');
+import Task from '../Task';
+import MultiTask from '../MultiTask';
+import gulp from 'gulp';
+import through from 'through';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
+import browserify from 'browserify';
+import watchify from 'watchify';
+import 'babelify';
+import uglify from 'gulp-uglify-es';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import sourcemaps from 'gulp-sourcemaps';
+import browserSync from 'browser-sync';
+import size from 'gulp-size';
+import notifier from 'node-notifier';
+import path from 'path';
 
 const config = {
     source: null,
@@ -54,7 +54,7 @@ class ScriptsTask extends Task {
             .pipe(source(path.basename(this.config.source)))
             .pipe(buffer())
             .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(this.isProduction() ? uglify() : through())
+            .pipe(this.isProduction() ? (uglify.default)() : through())
             .pipe(size({title: colors.white('Generated Script:'), showFiles: true}))
             .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(this.config.destination))
@@ -70,4 +70,4 @@ const task = new MultiTask('scripts', config, ScriptsTask);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

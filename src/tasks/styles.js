@@ -1,21 +1,24 @@
-const Task = require('../Task');
-const MultiTask = require('../MultiTask');
-const gulp = require('gulp');
-const through = require('through');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
-const sass = require('gulp-sass')(require('sass'));
-const sassGlob = require('gulp-sass-glob');
-const sassVariables = require('gulp-sass-variables');
-const sourcemaps = require('gulp-sourcemaps');
-const postcss = require('gulp-postcss');
-const postcssImport = require('postcss-import');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const browserSync = require('browser-sync');
-const size = require('gulp-size');
-const plumber = require('gulp-plumber');
-const notifier = require('node-notifier');
+import Task from '../Task';
+import MultiTask from '../MultiTask';
+import gulp from 'gulp';
+import through from 'through';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import sassGlob from 'gulp-sass-glob';
+import sassVariables from 'gulp-sass-variables';
+import sourcemaps from 'gulp-sourcemaps';
+import postcss from 'gulp-postcss';
+import postcssImport from 'postcss-import';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import browserSync from 'browser-sync';
+import size from 'gulp-size';
+import plumber from 'gulp-plumber';
+import notifier from 'node-notifier';
+
+const sass = gulpSass(dartSass);
 
 const config = {
     source: null,
@@ -100,4 +103,4 @@ const task = new MultiTask('styles', config, StylesTask);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

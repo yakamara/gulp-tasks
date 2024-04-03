@@ -19,7 +19,18 @@
         "url": "https://github.com/yakamara/gulp-tasks/issues"
     },
     "homepage": "https://github.com/yakamara/gulp-tasks",
-    "main": "src/index.js",
+    "type": "module",
+    "exports": {
+        "./browserSync": "./src/tasks/browserSync.js",
+        "./clean": "./src/tasks/clean.js",
+        "./copy": "./src/tasks/copy.js",
+        "./images": "./src/tasks/images.js",
+        "./init": "./src/tasks/init.js",
+        "./modernizr": "./src/tasks/modernizr.js",
+        "./scripts": "./src/tasks/scripts.js",
+        "./styles": "./src/tasks/styles.js",
+        "./svgs": "./src/tasks/svgs.js"
+    },
     "dependencies": {
         "@babel/core": "^7.4.5",
         "@babel/preset-env": "^7.4.5",

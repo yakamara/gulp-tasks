@@ -1,7 +1,7 @@
-const Task = require('../Task');
-const gulp = require('gulp');
-const browserSync = require('browser-sync');
-const notifier = require('node-notifier');
+import Task from '../Task';
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import notifier from 'node-notifier';
 
 const config = {
     proxy: null,
@@ -35,4 +35,4 @@ const task = new BrowserSyncTask('browser-sync', config);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

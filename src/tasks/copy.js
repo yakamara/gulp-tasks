@@ -1,10 +1,10 @@
-const Task = require('../Task');
-const MultiTask = require('../MultiTask');
-const gulp = require('gulp');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
-const copy = require('cpy');
-const path = require('path');
+import Task from '../Task';
+import MultiTask from '../MultiTask';
+import gulp from 'gulp';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
+import copy from 'cpy';
+import path from 'path';
 
 const config = {
     source: null,
@@ -34,4 +34,4 @@ const task = new MultiTask('copy', config, CopyTask);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

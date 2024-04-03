@@ -1,6 +1,6 @@
-const Task = require('../Task');
-const gulp = require('gulp');
-const colors = require('ansi-colors');
+import Task from '../Task';
+import gulp from 'gulp';
+import colors from 'ansi-colors';
 
 class InitTask extends Task {
     run(done) {
@@ -35,4 +35,4 @@ const task = new InitTask('init');
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

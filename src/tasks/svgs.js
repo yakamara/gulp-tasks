@@ -1,6 +1,6 @@
-const Task = require('../Task');
-const MultiTask = require('../MultiTask');
-const gulp = require('gulp');
+import Task from '../Task';
+import MultiTask from '../MultiTask';
+import gulp from 'gulp';
 const colors = require('ansi-colors');
 const log = require('fancy-log');
 const svgstore = require('gulp-svgstore');
@@ -54,4 +54,4 @@ const task = new MultiTask('svgs', config, SvgsTask);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

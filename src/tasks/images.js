@@ -1,12 +1,12 @@
-const Task = require('../Task');
-const MultiTask = require('../MultiTask');
-const gulp = require('gulp');
-const through = require('through');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
-const imagemin = require('gulp-imagemin');
-const count = require('gulp-count');
-const path = require('path');
+import Task from '../Task';
+import MultiTask from '../MultiTask';
+import gulp from 'gulp';
+import through from 'through';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
+import imagemin from 'gulp-imagemin';
+import count from 'gulp-count';
+import path from 'path';
 
 const config = {
     source: null,
@@ -60,4 +60,4 @@ const task = new MultiTask('images', config, ImagesTask);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;

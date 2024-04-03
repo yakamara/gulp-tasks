@@ -1,5 +1,5 @@
-const Task = require('./Task');
-const gulp = require('gulp');
+import Task from './Task';
+import gulp from 'gulp';
 
 class MultiTask extends Task {
     constructor(name, config, SubTask) {
@@ -34,4 +34,4 @@ class MultiTask extends Task {
     }
 }
 
-module.exports = MultiTask;
+export default MultiTask;

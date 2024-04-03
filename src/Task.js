@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
 
 class Task {
     constructor(name, config = {}) {
@@ -59,4 +59,4 @@ Task.globalConfig = {
     watching: false,
 }
 
-module.exports = Task;
+export default Task;

@@ -1,13 +1,13 @@
-const Task = require('../Task');
-const MultiTask = require('../MultiTask');
-const gulp = require('gulp');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
-const path = require('path');
-const terser = require('terser');
-const modernizr = require("modernizr");
-const writefile = require('writefile');
-const humanSize = require('human-size');
+import Task from '../Task';
+import MultiTask from '../MultiTask';
+import gulp from 'gulp';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
+import path from 'path';
+import terser from 'terser';
+import modernizr from 'modernizr';
+import writefile from 'writefile';
+import humanSize from 'human-size';
 
 const config = {
     destination: null,
@@ -50,4 +50,4 @@ const task = new MultiTask('modernizr', config, ModernizrTask);
 
 gulp.task(task.gulpTask());
 
-module.exports = task;
+export default task;
