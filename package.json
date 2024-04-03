@@ -33,7 +33,7 @@
         "cssnano": "^6.0.0",
         "del": "^6.0.0",
         "fancy-log": "^2.0.0",
-        "gulp": "^4.0.0",
+        "gulp": "^5.0.0",
         "gulp-count": "^1.0.0",
         "gulp-imagemin": "^7.1.0",
         "gulp-plumber": "^1.2.0",
