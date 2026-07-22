@@ -16,7 +16,7 @@ const config = {
 
 class ImagesTask extends Task {
     run() {
-        return gulp.src(path.join(this.config.source, this.config.files))
+        return gulp.src(path.posix.join(this.config.source, this.config.files))
 
             .pipe(this.isProduction() ? imagemin([
                 // https://www.npmjs.com/browse/keyword/imageminplugin
